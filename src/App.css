@@ -1,8 +1,11 @@
 .upper-bar {
   --width: 0%;
+  --top: top;
+  --bottom: bottom;
   --color: #ff4500;
   position: absolute;
-  top: 0;
+  top: var(--top);
+  bottom: var(--bottom);
   left: 0;
   width: var(--width);
   max-width: 100%;

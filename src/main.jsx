@@ -8,6 +8,7 @@ const colorPresets = ["#fc59a3", "#87c830", "#ffd400", "#fe7e0f", "#8e3ccb"];
 
 const Root = () => {
   const [width, setWidth] = useState(0);
+  const [position , setPosition] = useState("top");
   const [color, setColor] = useState("#ff4500");
   const changeWidth = (newWidth) => {
     if (width >= 100) setWidth(10);
@@ -39,12 +40,13 @@ const Root = () => {
   console.log("width", width);
   return (
     <React.StrictMode>
-      <App width={width} color={color} />
+      <App width={width} color={color} position={position}/>
       <Body
         resetWidth={resetWidth}
         changeWidth={changeWidth}
         changeColor={changeColor}
         color={color}
+        setPosition={setPosition}
       />
     </React.StrictMode>
   );

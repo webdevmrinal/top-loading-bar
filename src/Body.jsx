@@ -1,9 +1,10 @@
 import React from "react";
 import Spinner from "./Spinner";
 
-function Body({ changeWidth, resetWidth, changeColor, color }) {
+function Body({ changeWidth, resetWidth, changeColor, color, setPosition }) {
   const buttonStyle = {
     padding: "1em 3em",
+    margin: "0 2em",
     color: color,
     background: "transparent",
     border: `1px solid ${color}`,
@@ -25,7 +26,7 @@ function Body({ changeWidth, resetWidth, changeColor, color }) {
         gap: "2em",
       }}
     >
-      <div style={{ display: "flex", gap: "2em" }}>
+      <div >
         <button onClick={() => changeWidth(10)} style={buttonStyle}>
           Add 10%
         </button>
@@ -40,6 +41,24 @@ function Body({ changeWidth, resetWidth, changeColor, color }) {
           style={buttonStyle}
         >
           Randomize color
+        </button>
+      </div>
+      <div>
+        <div
+          style={{
+            textAlign: "center",
+            color: "wheat",
+            padding: "1em 0",
+            fontSize: "1.5em",
+          }}
+        >
+          Bar Position
+        </div>
+        <button style={buttonStyle} onClick={() => setPosition("top")}>
+          Top
+        </button>
+        <button style={buttonStyle} onClick={() => setPosition("bottom")}>
+          Bottom
         </button>
       </div>
       <Spinner />
