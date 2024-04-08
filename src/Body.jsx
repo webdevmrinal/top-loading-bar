@@ -1,7 +1,14 @@
 import React from "react";
 import Spinner from "./Spinner";
 
-function Body({ changeWidth, resetWidth, changeColor, color, setPosition }) {
+function Body({
+  changeWidth,
+  resetWidth,
+  changeColor,
+  color,
+  setPosition,
+  setDirection,
+}) {
   const buttonStyle = {
     padding: "1em 3em",
     margin: "0 2em",
@@ -26,7 +33,7 @@ function Body({ changeWidth, resetWidth, changeColor, color, setPosition }) {
         gap: "2em",
       }}
     >
-      <div >
+      <div>
         <button onClick={() => changeWidth(10)} style={buttonStyle}>
           Add 10%
         </button>
@@ -59,6 +66,16 @@ function Body({ changeWidth, resetWidth, changeColor, color, setPosition }) {
         </button>
         <button style={buttonStyle} onClick={() => setPosition("bottom")}>
           Bottom
+        </button>
+      </div>
+      <div>
+        <button
+          style={buttonStyle}
+          onClick={() => {
+            setDirection();
+          }}
+        >
+          Change Direction
         </button>
       </div>
       <Spinner />
